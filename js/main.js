@@ -51,7 +51,7 @@ function displayForm()
 
         bookmarksResults.innerHTML += '<div class="well-display">'+
           '<h3>'+name+
-              ' <a class="btn btn-primary" target="_blank" href="' + addhttp(url) + '"> <i class="far fa-eye"></i> Visit</a> ' +
+              ' <a class="btn btn-primary" target="_blank" href="' + addHttp(url) + '"> <i class="far fa-eye"></i> Visit</a> ' +
               ' <a onclick="deleteBookmark(\''+ url +'\')" class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i> Delete</a> ' +
           '</h3>'+
           '</div>';
@@ -91,9 +91,12 @@ function validateForm(siteName, siteUrl){
   return true;
 }
 
-function addhttp(url) {
+function addHttp(url) {
   if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
       url = "http://" + url;
   }
   return url;
 }
+
+// Loading
+ $('.loader_bg').fadeToggle(3000);
